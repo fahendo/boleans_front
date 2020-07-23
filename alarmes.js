@@ -1,8 +1,7 @@
 var templateLinha = `<div class="row **LINHA**">
-                         <div class="col-2">**DATA**</div>
-                         <div class="col-4">**ALARME**</div>
-                         <div class="col-3">**HOST**</div>
-                         <div class="col-3">**IP**</div>
+                         <div class="col-6 text-center">**DESCRICAO**</div>
+                         <div class="col-6 text-center">**QUANTIDADE**</div>
+                         
                      </div>
                     `;
 
@@ -26,7 +25,7 @@ function gerarRelatorio(){
         }
     };
 
-    fetch("http://localhost:8088/eventos/periodo",cabecalho)
+    fetch("http://localhost:8088/alarmes/eventos",cabecalho)
        .then(res => res.json())
        .then(res => preencheTabela(res));
 }
@@ -35,7 +34,7 @@ function preencheTabela(res){
     var tabela = "";
 
     for (i=0; i<res.length; i++){
-        var evento = res[i];
+        var alarme = res[i];
         var estiloLinha;
         if (i % 2 == 0){
             estiloLinha = "linhaPar";
@@ -44,11 +43,9 @@ function preencheTabela(res){
             estiloLinha = "linhaImpar";
         }
 
-        var strLinha = templateLinha.replace("**DATA**",evento.data)
-                                    .replace("**ALARME**", evento.alarme.nome)
-                                    .replace("**HOST**", evento.equipamento.hostname)
-                                    .replace("**LINHA**", estiloLinha)
-                                    .replace("**IP**", evento.equipamento.endIp);
+        var strLinha = templateLinha.replace("**DESCRICAO**", alarme.nomeAlarme)
+                                    .replace("**QUANTIDADE**", alarme.qtde);
+                                    
         tabela = tabela + strLinha;
     }
     document.getElementById("relatorio").innerHTML = tabela;
