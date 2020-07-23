@@ -5,29 +5,41 @@ var templateLinha = `<div class="row **LINHA**">
                      </div>
                     `;
 
-            
+var templateCabecalho = `<div class="row titulo">
+                        <div class="col-6 text-center">Descrição Alarme</div>
+                        <div class="col-6 text-center">Quantidade no Período</div>
 
+                    </div>`
+                    ;
+                        
+                                           
 
 function gerarRelatorio(){
     var txtInicio = document.getElementById("txtDataInicio").value;
     var txtFim    = document.getElementById("txtDataFim").value;
     console.log("Inicio = "+txtInicio+" / Fim = "+txtFim);
 
-    var msgBody = {
-        inicio : txtInicio,
-        fim    : txtFim
-    };
-    var cabecalho = {
-        method  : 'POST',
-        body    : JSON.stringify(msgBody),
-        headers : {
-            'Content-type': 'application/json'
-        }
-    };
+    if (txtInicio == "" || txtFim == "") {
+        alert("Selecione um período");
+    }
 
-    fetch("http://localhost:8088/alarmes/eventos",cabecalho)
+    else {
+        var msgBody = {
+            inicio : txtInicio,
+            fim    : txtFim
+        };
+        var cabecalho = {
+            method  : 'POST',
+            body    : JSON.stringify(msgBody),
+            headers : {
+                'Content-type': 'application/json'
+            }
+        }
+        
+        fetch("http://localhost:8088/alarmes/eventos",cabecalho)
        .then(res => res.json())
        .then(res => preencheTabela(res));
+    }
 }
 
 function preencheTabela(res){
@@ -48,8 +60,7 @@ function preencheTabela(res){
                                     
         tabela = tabela + strLinha;
     }
-    document.getElementById("relatorio").innerHTML = tabela;
-
+    document.getElementById("relatorio").innerHTML = templateCabecalho + tabela;
     
 }
 

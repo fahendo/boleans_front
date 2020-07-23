@@ -6,6 +6,14 @@ var templateLinha = `<div class="row **LINHA**">
                      </div>
                     `;
 
+var templateCabecalho = `<div class="row titulo">
+                            <div class="col-2">Data</div>
+                            <div class="col-4">Alarme</div>
+                            <div class="col-3">Hostname</div>
+                            <div class="col-3">End. IP</div>
+                    </div>`
+                    ;
+
             
 
 
@@ -13,22 +21,28 @@ function gerarRelatorio(){
     var txtInicio = document.getElementById("txtDataInicio").value;
     var txtFim    = document.getElementById("txtDataFim").value;
     console.log("Inicio = "+txtInicio+" / Fim = "+txtFim);
+    if (txtInicio == "" || txtFim == "") {
+        alert("Selecione um período");
+    }
 
-    var msgBody = {
-        inicio : txtInicio,
-        fim    : txtFim
-    };
-    var cabecalho = {
-        method  : 'POST',
-        body    : JSON.stringify(msgBody),
-        headers : {
-            'Content-type': 'application/json'
+    else {
+        var msgBody = {
+            inicio : txtInicio,
+            fim    : txtFim
+        };
+        var cabecalho = {
+            method  : 'POST',
+            body    : JSON.stringify(msgBody),
+            headers : {
+                'Content-type': 'application/json'
+            }
         }
-    };
-
-    fetch("http://localhost:8088/eventos/periodo",cabecalho)
+        
+        fetch("http://localhost:8088/eventos/periodo",cabecalho)
        .then(res => res.json())
        .then(res => preencheTabela(res));
+    }
+
 }
 
 function preencheTabela(res){
@@ -51,7 +65,7 @@ function preencheTabela(res){
                                     .replace("**IP**", evento.equipamento.endIp);
         tabela = tabela + strLinha;
     }
-    document.getElementById("relatorio").innerHTML = tabela;
+    document.getElementById("relatorio").innerHTML = templateCabecalho + tabela;
 
     
 }

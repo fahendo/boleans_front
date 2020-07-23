@@ -21,6 +21,7 @@ function clickBotaoEnviar(){
     // corpo da mensagem
     var msgBody = {   
         email : txtEmail,
+        racf  : txtEmail,
         senha : txtSenha
     }
 
