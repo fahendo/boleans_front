@@ -28,3 +28,61 @@ button{
 .titulo{
     font-weight: bold;
 }
+
+body{
+    background-color: rgb(41, 43, 44);
+}
+
+.container{
+    background-color: white;
+}
+
+button{
+    margin: 3%;
+}
+
+
+.destaque{
+    border-bottom: 1px solid black;
+}
+
+.destaque:hover{
+    background-color: grey;
+
+}
+
+.linhaPar{
+    background-color: white;
+    font-family: 'Verdana', Courier, monospace;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.linhaImpar{
+    background-color: rgb(255, 206, 149);
+    font-family: 'Verdana', Courier, monospace;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.titulo{
+    font-weight: bold;
+}
+
+.tituloeventos{
+    color:rgb(255, 255, 255);
+    background-color: rgb(242, 133, 0);
+    margin-left: -100px;
+    margin-right: -100px;
+    text-align:center;
+}
+
+main{
+    margin-top: 70px;
+    padding-top: 20px;
+}
+
+.image{
+    margin-right: 3%;
+    margin-left: 3%;
+}

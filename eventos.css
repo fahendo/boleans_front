@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(58, 58, 58);
+    background-color: rgb(41, 43, 44);
 }
 
 .container{
@@ -49,5 +49,10 @@ button{
 main{
     margin-top: 70px;
     padding-top: 20px;
+}
+
+.image{
+    margin-right: 3%;
+    margin-left: 3%;
 }
 

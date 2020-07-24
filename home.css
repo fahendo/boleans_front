@@ -16,6 +16,15 @@ body{
     padding-bottom: 20px;
 }
 
+.destaque{
+    border-bottom: 1px solid black;
+}
+
+.destaque:hover{
+    background-color: grey;
+
+}
+
 #lblTitulo{
     margin-left: 3%;
     background-color: #007BFF;
@@ -40,9 +49,30 @@ footer{
 }
 
 .card{
-    width: 50%;
-    max-width: 650px;
+    width: 70%;
     border: 1px solid black;
     margin: 3%;
     border-radius: 5px;
+}
+
+.titulo{
+    font-weight: bold;
+}
+
+.tituloeventos{
+    color:rgb(255, 255, 255);
+    background-color: rgb(242, 133, 0);
+    margin-left: -100px;
+    margin-right: -100px;
+    text-align:center;
+}
+
+main{
+    margin-top: 70px;
+    padding-top: 20px;
+}
+
+.image{
+    margin-right: 3%;
+    margin-left: 3%;
 }

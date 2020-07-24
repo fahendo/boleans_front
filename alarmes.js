@@ -1,17 +1,18 @@
-var templateLinha = `<div class="row **LINHA**">
-                         <div class="col-6 text-center">**DESCRICAO**</div>
-                         <div class="col-6 text-center">**QUANTIDADE**</div>
-                         
-                     </div>
-                    `;
+var templateCabecalho = `
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Quantidade</th>
+                            </tr>
+                        </thead> `
+                            ;
 
-var templateCabecalho = `<div class="row titulo">
-                        <div class="col-6 text-center">Descrição Alarme</div>
-                        <div class="col-6 text-center">Quantidade no Período</div>
-
-                    </div>`
-                    ;
-                        
+var templateLinha = ` 
+                    <tr class="destaque">
+                        <th scope="row">**DESCRICAO**</th>
+                        <td>**QUANTIDADE**</td>
+                    </tr>`
+                         ;  
                                            
 
 function gerarRelatorio(){
@@ -60,7 +61,7 @@ function preencheTabela(res){
                                     
         tabela = tabela + strLinha;
     }
-    document.getElementById("relatorio").innerHTML = templateCabecalho + tabela;
+    document.getElementById("relatorio").innerHTML = templateCabecalho + '<body>' + tabela + '</body>';
     
 }
 

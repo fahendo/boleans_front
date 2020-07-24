@@ -1,22 +1,61 @@
-var templateLinha = `<div class="row destaque">
-                         <div class="col-2">**DATA**</div>
-                         <div class="col-4">**ALARME**</div>
-                         <div class="col-3">**HOST**</div>
-                         <div class="col-3">**IP**</div>
-                     </div>
-                    `;
+var templateCabecalho = `
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Data</th>
+                                <th scope="col">Alarme</th>
+                                <th scope="col">Hostname</th>
+                                <th scope="col">End. IP</th>
+                                </tr>
+                            </thead> `
+                            ;
 
-var templateCabecalho = `<div class="row titulo">
-                            <div class="col-2">Data</div>
-                            <div class="col-4">Alarme</div>
-                            <div class="col-3">Hostname</div>
-                            <div class="col-3">End. IP</div>
-                    </div>`
-                    ;
+var templateLinha = ` <tr class="destaque">
+                        <th scope="row">**DATA**</th>
+                        <td>**ALARME**</td>
+                        <td>**HOST**</td>
+                        <td>**IP**</td>
+                    </tr>`
+                         ;
 
         
 
-            
+
+
+/*
+
+                    <table class="table">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Primeiro</th>
+                          <th scope="col">Último</th>
+                          <th scope="col">Nickname</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>@twitter</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+
+                    */
 
 
 function gerarRelatorio(){
@@ -59,7 +98,7 @@ function preencheTabela(res){
                                     .replace("**IP**", evento.equipamento.endIp);
         tabela = tabela + strLinha;
     }
-    document.getElementById("relatorio").innerHTML = templateCabecalho + tabela;
+    document.getElementById("relatorio").innerHTML = templateCabecalho + '<body>' + tabela + '</body>';
 
     
 }
