@@ -1,6 +1,7 @@
 var templateFoto = `<img src="**FOTO**" width="100%">`;
-var templateInfo = `<strong>Nome:</strong> **NOME** <br>
-                    <strong>RACF:</strong> **RACF** <br>
+
+var templateNome = '<h5 class="card-title">**NOME**</h5>'
+var templateInfo = `<strong>RACF:</strong> **RACF** <br>
                     <strong>EMAIL:</strong> **EMAIL** <br>
                     <strong>DEPARTAMENTO:</strong> <a href="departamento.html?id=**ID**">**DEPTO**</a> <br>
                     <strong>UNIDADE:</strong> **UNIDADE**
@@ -25,13 +26,14 @@ function preencheInfo(){
         var strFoto = templateFoto.replace("**FOTO**", objUser.linkFoto);
         document.getElementById("fotoUser").innerHTML = strFoto;
 
-        var strInfo = templateInfo.replace("**NOME**", objUser.nome)
-                                  .replace("**RACF**", objUser.racf)
+        var strInfo = templateInfo.replace("**RACF**", objUser.racf)
                                   .replace("**EMAIL**", objUser.email)
                                   .replace("**DEPTO**", objUser.depto.nome)
                                   .replace("**UNIDADE**", objUser.depto.unidade)
                                   .replace("**ID**",objUser.depto.id);
-        document.getElementById("infoUser").innerHTML = strInfo;
+
+        var strNome = templateNome.replace("**NOME**", objUser.nome);
+        document.getElementById("infoUser").innerHTML = strNome + strInfo;
     }
 }
 

@@ -7,25 +7,56 @@
     </head>
     <body onload="preencheInfo();">
         <div class="container">
-            <div class="row">
+
+            <nav class="navbar navbar-light">
+                
+                <img src="https://www.itau.com.br/content/dam/itau/varejo/logo-itau-varejo-desktop.png" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
+                        
+                <span class="navbar-brand mb-0 h1" id="titulo">EVENT DASHBOARD</span>
+
+                <button class="btn btn-primary float-right" onclick="logout();">Logout</button>
+
+            </nav>
+
+            <!-- <div class="row">
                 <div class="col-12 text-center">
                     <h3> Event DashBoard</h3>
                 </div>
-            </div>
-            <div class="row">
+            </div> -->
+            
+            <!-- <div class="row">
                 <div class="col-12">
                     <button class="btn btn-primary float-right" onclick="logout();">Logout</button>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="row">
-                <div class="col-md-3 col-xl-3 col-sm-12" id="fotoUser">
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                  <div class="col-md-4" id="fotoUser">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <div id="infoUser">
+                        ** aqui vao as informacoes ***
+                    </div>
+                   </div>
+                  </div>
+                </div>
+              </div>
+
+
+            <!-- <div class="row">
+                <div class="col-md-2 col-xl-2 col-sm-12" id="fotoUser">
                     *** aqui vai a foto ***
                 </div>
-                <div class="col-md-9 col-xl-9 col-sm-12" id="infoUser">
+                <div class="col-md-6 col-xl-6 col-sm-12" id="infoUser">
                     ** aqui vao as informacoes ***
                 </div>
-            </div>
+                <div class="col-md-4 col-xl-4 col-sm-12">
+                    Portal destinado à monitoração de eventos de infraestrutura de TI.
+                </div>
+            </div> -->
+
             <label for="tipoRel" id="lblTitulo">Selecione Seu Relatório</label>
             <div class="row" id="tipoRel">
                 <div class="col-12">
@@ -33,6 +64,12 @@
                     <a href="alarmes.html"><h4>Relatório de Incidentes de Alarmes</h4></a>
                 </div>
             </div>
+        
+            <footer class=float-right>
+                <p>Powered by: Boleans ft Isidrocorp</p>
+                <p><a href="mailto:hege@example.com">boleans@boleans.com</a></p>
+            </footer>
+        
         </div>
 
 

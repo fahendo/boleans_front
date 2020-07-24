@@ -23,5 +23,26 @@ body{
     margin-bottom: -5px;
     color: white;
     padding: 5px;
-    border-radius: 5px
+    border-radius: 5px;
+}
+
+#titulo{
+    font-size: 30px;
+}
+
+.navbar{
+    background-color: rgb(241, 75, 14);
+    margin-bottom: 50px; 
+}
+
+footer{
+    margin: 2%;
+}
+
+.card{
+    width: 50%;
+    max-width: 650px;
+    border: 1px solid black;
+    margin: 3%;
+    border-radius: 5px;
 }
