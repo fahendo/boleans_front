@@ -1,4 +1,4 @@
-var templateLinha = `<div class="row **LINHA**">
+var templateLinha = `<div class="row destaque">
                          <div class="col-2">**DATA**</div>
                          <div class="col-4">**ALARME**</div>
                          <div class="col-3">**HOST**</div>
@@ -13,6 +13,8 @@ var templateCabecalho = `<div class="row titulo">
                             <div class="col-3">End. IP</div>
                     </div>`
                     ;
+
+        
 
             
 
@@ -50,18 +52,10 @@ function preencheTabela(res){
 
     for (i=0; i<res.length; i++){
         var evento = res[i];
-        var estiloLinha;
-        if (i % 2 == 0){
-            estiloLinha = "linhaPar";
-        }
-        else{
-            estiloLinha = "linhaImpar";
-        }
-
+        
         var strLinha = templateLinha.replace("**DATA**",evento.data)
                                     .replace("**ALARME**", evento.alarme.nome)
                                     .replace("**HOST**", evento.equipamento.hostname)
-                                    .replace("**LINHA**", estiloLinha)
                                     .replace("**IP**", evento.equipamento.endIp);
         tabela = tabela + strLinha;
     }
