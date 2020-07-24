@@ -3,7 +3,7 @@ var templateFoto = `<img src="**FOTO**" width="100%">`;
 var templateNome = '<h5 class="card-title">**NOME**</h5>'
 var templateInfo = `<strong>RACF:</strong> **RACF** <br>
                     <strong>EMAIL:</strong> **EMAIL** <br>
-                    <strong>DEPARTAMENTO:</strong> <a href="departamento.html?id=**ID**">**DEPTO**</a> <br>
+                    <strong>DEPARTAMENTO:</strong> **DEPTO** <br>
                     <strong>UNIDADE:</strong> **UNIDADE**
                    `;
 
